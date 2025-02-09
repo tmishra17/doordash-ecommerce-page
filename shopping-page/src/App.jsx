@@ -1,11 +1,45 @@
-import cart from "./cart.svg"
-
+import cart from "./assets/cart.svg"
+// import Modal from "./components/modal.jsx"
+import likeButton from "./assets/LikeButton.svg"
 import './App.css'
+
+// use Modal when clicking on card or cart icon
+// link: https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=1000,height=300,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/c58d4a66-0d0c-4d8d-9735-64c26a665c15.jpeg
+// src="https://img.cdn4dd.com/p/fit=cover,width=1200,height=1200,format=auto,quality=70/media/photosV2/da74e716-b049-4c8c-9d3f-740141511dd6-retina-large.jpg "
 
 function App() {
 
   return (
-    <div><button ><img src={cart} alt="cart" /></button></div>
+      <div>
+          <button><img src={cart} alt="cart" /></button>
+      <button>Sign in</button>
+      <button>Sign up</button>
+      <Card />
+      </div>
+  )
+}
+
+
+function Card() {
+  return (
+    <div className="card">
+      <div>
+        <div>
+          <p className="cardFoodText">Taco de Asada</p>
+          <div>
+            <span>$4.23</span>
+            <span>
+              <span>•</span>
+              <span><img src={likeButton} alt="Like Button"/> 91%</span>
+            </span>
+          </div>  
+          <div>
+            <p>#1 most liked</p>
+          </div>
+        </div>
+        <img src="https://img.cdn4dd.com/p/fit=cover,width=1200,height=1200,format=auto,quality=70/media/photosV2/da74e716-b049-4c8c-9d3f-740141511dd6-retina-large.jpg" alt="taco" className="image"/>  
+      </div>  
+    </div>
   )
 }
 
