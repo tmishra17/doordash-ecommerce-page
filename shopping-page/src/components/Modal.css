@@ -1,0 +1,40 @@
+.modalContainer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal {
+    background-color: white;
+    border-radius: 5px;
+    padding: 2rem;
+    width: 30em;
+}
+
+.close {
+    cursor: pointer;
+}
+
+.button {
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 30px 12px 30px;
+    margin-right: 5px;
+    transition: backgroud-color 0.15s ease-in-out;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: none;
+    cursor: pointer;
+  }
+  .redBtn {
+    color: white;
+    background-color: #e01902;
+  }
+  .redBtn:hover {
+    background-color: #d61500;
+  }

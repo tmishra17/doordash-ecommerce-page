@@ -1,6 +1,8 @@
 import cart from "./assets/cart.svg"
-// import Modal from "./components/modal.jsx"
-import likeButton from "./assets/LikeButton.svg"
+import { useState } from "react"
+import { Modal } from "./components/Modal.jsx"
+import {RestaurantStatus} from './components/RestaurantStatus.jsx'
+// import likeButton from "./assets/LikeButton.svg"
 import './App.css'
 
 // use Modal when clicking on card or cart icon
@@ -8,13 +10,28 @@ import './App.css'
 // src="https://img.cdn4dd.com/p/fit=cover,width=1200,height=1200,format=auto,quality=70/media/photosV2/da74e716-b049-4c8c-9d3f-740141511dd6-retina-large.jpg "
 
 function App() {
+  const [modalOpen, setModalOpen] = useState(false)
+  const handleButtonClick = () => {
+    setModalOpen(false)
+  }
 
   return (
       <div>
-          <button><img src={cart} alt="cart" /></button>
-      <button>Sign in</button>
-      <button>Sign up</button>
-      <Card />
+        <button><img src={cart} alt="cart" /></button>
+        <button>Sign in</button>
+        <button>Sign up</button>
+        <div>
+          <RestaurantStatus />
+        </div>
+        <button onClick={()=>setModalOpen(true)}><Card /></button>
+        {modalOpen && 
+          <Modal onClose={handleButtonClick}>
+            <h1>Taco De Asada</h1>
+            <p>#3 most liked</p>  
+          </Modal>
+        }
+        behind the modal
+        {/* finish the modal later and be cool */}
       </div>
   )
 }
@@ -30,7 +47,7 @@ function Card() {
             <span>$4.23</span>
             <span>
               <span>•</span>
-              <span><img src={likeButton} alt="Like Button"/> 91%</span>
+              <span> 91%</span>
             </span>
           </div>  
           <div>
