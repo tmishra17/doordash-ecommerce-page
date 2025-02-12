@@ -2,6 +2,8 @@ import cart from "./assets/cart.svg"
 import { useState } from "react"
 import { Modal } from "./components/Modal.jsx"
 import {RestaurantStatus} from './components/RestaurantStatus.jsx'
+import { Carousel } from "./components/Carousel.jsx"
+import { PickupOrDeliv } from "./components/PickupOrDeliv.jsx"
 // import likeButton from "./assets/LikeButton.svg"
 import './App.css'
 
@@ -23,7 +25,11 @@ function App() {
         <div>
           <RestaurantStatus />
         </div>
-        <button onClick={()=>setModalOpen(true)}><Card /></button>
+        <PickupOrDeliv />
+        <Carousel>
+        </Carousel>
+          <button onClick={()=>setModalOpen(true)}><Card /></button>
+          <button onClick={()=>setModalOpen(true)}><Card /></button>
         {modalOpen && 
           <Modal onClose={handleButtonClick}>
             <h1>Taco De Asada</h1>
@@ -43,16 +49,10 @@ function Card() {
       <div>
         <div>
           <p className="cardFoodText">Taco de Asada</p>
-          <div>
-            <span>$4.23</span>
-            <span>
-              <span>•</span>
-              <span> 91%</span>
-            </span>
-          </div>  
-          <div>
-            <p>#1 most liked</p>
-          </div>
+          <div className="bg-white p-4 rounded-lg shadow-md">
+          <h2 className="text-xl font-bold">Taco de Asada</h2>
+          <p className="text-gray-600">$4.23 - 91% rating</p>
+        </div>
         </div>
         <img src="https://img.cdn4dd.com/p/fit=cover,width=1200,height=1200,format=auto,quality=70/media/photosV2/da74e716-b049-4c8c-9d3f-740141511dd6-retina-large.jpg" alt="taco" className="image"/>  
       </div>  
