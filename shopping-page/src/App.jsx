@@ -1,4 +1,4 @@
-import cart from "./assets/cart.svg"
+import ShoppingCart from "./assets/ShoppingCart.svg"
 import { useState } from "react"
 import { Modal } from "./components/Modal.jsx"
 import {RestaurantStatus} from './components/RestaurantStatus.jsx'
@@ -18,27 +18,44 @@ function App() {
   }
 
   return (
+    <div>
+      <button className="cartButton"><img src={ShoppingCart} className="icon" alt="cart" /></button>
+      <button>Sign in</button>
+      <button>Sign up</button>
       <div>
-        <button><img src={cart} alt="cart" /></button>
-        <button>Sign in</button>
-        <button>Sign up</button>
-        <div>
-          <RestaurantStatus />
-        </div>
-        <PickupOrDeliv />
-        <Carousel>
-        </Carousel>
-          <button onClick={()=>setModalOpen(true)}><Card /></button>
-          <button onClick={()=>setModalOpen(true)}><Card /></button>
-        {modalOpen && 
-          <Modal onClose={handleButtonClick}>
-            <h1>Taco De Asada</h1>
-            <p>#3 most liked</p>  
-          </Modal>
-        }
-        behind the modal
-        {/* finish the modal later and be cool */}
+        <RestaurantStatus />
       </div>
+      <PickupOrDeliv />
+      <Carousel>
+      </Carousel>
+      <button onClick={() => setModalOpen(true)}><Card /></button>
+      <button onClick={() => setModalOpen(true)}><Card /></button>
+      {modalOpen && 
+        <Modal onClose={handleButtonClick}>
+          <h1>Taco De Asada</h1>
+          <p>#3 most liked</p>  
+        </Modal>
+      }
+      behind the modal
+      <div className="foodChoices">
+        <div><button>Most Ordered</button></div>
+        <div><button>Tacos</button></div>
+        <div><button>Super Tacos</button></div>
+        <div><button>Tortas</button></div>
+        <div><button>Quesadillas</button></div>
+        <div><button>Burritos</button></div>
+        <div><button>Huaraches</button></div>
+        <div><button>Caldos</button></div>
+        <div><button>Seafood</button></div>
+        <div><button>Veggie</button></div>
+        <div><button>Platillos</button></div>
+        <div><button>Extras/sides</button></div>
+        <div><button>Drinks</button></div>
+        <div><button>Agua Fresca</button></div>
+        <div><button>Bebidas De Vidrio (glass soda)</button></div>
+      </div>
+      {/* finish the modal later and be cool */}
+    </div>
   )
 }
 
@@ -59,5 +76,7 @@ function Card() {
     </div>
   )
 }
+
+// make sure you are in the right directory (shopping page) when you type npm run dev
 
 export default App
