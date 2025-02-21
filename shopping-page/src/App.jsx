@@ -1,7 +1,7 @@
 import ShoppingCart from "./assets/ShoppingCart.svg"
 import { useState } from "react"
 import { Modal } from "./components/Modal.jsx"
-import {RestaurantStatus} from './components/RestaurantStatus.jsx'
+import { RestaurantStatus } from './components/RestaurantStatus.jsx'
 import { Carousel } from "./components/Carousel.jsx"
 import { PickupOrDeliv } from "./components/PickupOrDeliv.jsx"
 // import likeButton from "./assets/LikeButton.svg"
@@ -18,7 +18,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="container">
       <button className="cartButton"><img src={ShoppingCart} className="icon" alt="cart" /></button>
       <button>Sign in</button>
       <button>Sign up</button>
@@ -28,12 +28,14 @@ function App() {
       <PickupOrDeliv />
       <Carousel>
       </Carousel>
-      <button onClick={() => setModalOpen(true)}><Card /></button>
-      <button onClick={() => setModalOpen(true)}><Card /></button>
+      <div>
+        <button onClick={() => setModalOpen(true)}><Card /></button>
+        <button onClick={() => setModalOpen(true)}><Card /></button>
+      </div>
       {modalOpen && 
         <Modal onClose={handleButtonClick}>
           <h1>Taco De Asada</h1>
-          <p>#3 most liked</p>  
+          <p>#3 most liked</p>
         </Modal>
       }
       behind the modal

@@ -1,0 +1,30 @@
+.buttonContainer {
+    button {
+        /* text-decoration: none; */
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 20px;
+    }
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
+
+.white {
+    background-color: white;
+}
+
+.white:hover {
+    background-color:aliceblue
+}
+
+.PDcontainer {
+    display: flex;
+}
+
+.PDTextContainer {
+    
+}
